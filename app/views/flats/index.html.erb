@@ -1,14 +1,18 @@
+  <form class="form-inline">
+      <button class="btn btn-outline-success"><%= link_to "Add New Flat", new_flat_path %></button>
+  </form>
 <div class="container-fluid">
   <div class="container">
     <div class="row">
       <% @flats.each do |flat| %>
         <div class="col-3">
           <div class="card-trip">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+            <img src= "<%= flat.banner_url %>" />
             <div class="card-trip-infos">
               <div>
                 <h2><%= flat.name %></h2>
                 <p><%= flat.address %></p>
+                  <%= link_to "More Details", flat %>
               </div>
               <h6 class="card-trip-pricing">$<%= flat.price_per_night %></h4>
             </div>
